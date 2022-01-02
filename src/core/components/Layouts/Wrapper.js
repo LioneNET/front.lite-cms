@@ -4,13 +4,14 @@ import {
   MenuFoldOutlined,
 } from '@ant-design/icons'
 import { useState } from 'react'
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, Outlet, useLocation } from 'react-router-dom'
 import mainNavigate from './../Navigate/main_navigate';
-import MainRoutes from './../routes/main_routes';
 
 const { Header, Sider, Content } = Layout
 
 const Wrapper = () => {
+
+  const locParams = useLocation()
 
   const [collapsed, setCollapsed] = useState(false)
 
@@ -52,10 +53,7 @@ const Wrapper = () => {
           <CollapsedIcon />
         </Header>
         <Content className='admin-content'>
-          <Routes>
-            <Route path='*' element={<Navigate to='file' />} />
-            {MainRoutes.map(items => <Route key={items.path} path={items.path} element={<items.component />} />)}
-          </Routes>
+          {locParams.pathname === '/' ? <Navigate to='/file' /> : <Outlet />}
         </Content>
       </Layout>
     </Layout>
