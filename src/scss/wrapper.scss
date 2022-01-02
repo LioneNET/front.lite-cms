@@ -1,0 +1,42 @@
+
+.main-wrapper {
+  min-height: 100vh;
+  
+  .header-place {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .collapsed-trigger {
+    margin: 0px 15px;
+    display: flex;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+
+  .logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.site-layout {
+  .site-layout-background {
+    background: #fff;
+  }
+
+  .admin-content {
+    padding: 15px;
+  }
+}
