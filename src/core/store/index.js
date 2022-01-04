@@ -1,11 +1,29 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
+import AuthReducer from "./Auth";
 import FileReducer from './File';
 
+//все редюсеры
 const rootReducer = {
-  FileReducer
+  auth: AuthReducer,
+  files: FileReducer
 }
 
-const store = createStore(combineReducers(rootReducer), applyMiddleware(thunk))
+//Пользовательские данные из локального хранилища
+const getLocalUserData = () => {
+  const userData = localStorage.getItem('userData')
+  if(userData) {
+    return JSON.parse(userData)
+  }
+  return null
+}
+
+const initialState = {
+  auth: {
+    userData: getLocalUserData()
+  }
+}
+
+const store = createStore(combineReducers(rootReducer), initialState, applyMiddleware(thunk))
 
 export default store

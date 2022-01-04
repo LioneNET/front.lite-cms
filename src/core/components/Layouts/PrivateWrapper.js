@@ -5,7 +5,7 @@ import {
 } from '@ant-design/icons'
 import { useState } from 'react'
 import { Link, Navigate, Outlet, useLocation } from 'react-router-dom'
-import mainNavigate from './../Navigate/main_navigate';
+import mainNavigate from '../Navigate/main_navigate';
 
 const { Header, Sider, Content } = Layout
 
