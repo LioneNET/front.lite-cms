@@ -1,11 +1,13 @@
 import authRotues from "./authRoutes"
 import commonRoutes from "./commonRoutes"
 import fileRoutes from "./fileRoutes"
+import categoryRoutes from './categoryRoutes';
 
 const MainRoutes = [
   ...authRotues,
   ...fileRoutes,
-  ...commonRoutes
+  ...commonRoutes,
+  ...categoryRoutes
 ]
 
 const defaultRoute = '/'

@@ -28,12 +28,11 @@ const Wrapper = () => {
       </div>
     )
   }
-
   return (
     <Layout className='main-wrapper'>
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['file']}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={[locParams.pathname.substring(1)]}>
           {
             mainNavigate.map(item => {
               return (
